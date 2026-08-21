@@ -1,3 +1,3 @@
-# Frontend Project
+# Frontend Engineering
 
-This repository contains my frontend development projects.
+This repository contains my frontend development work.
