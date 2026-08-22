@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prem Miglani | Web Developer</title>
+<meta name="description" content="Portfolio website of Prem Miglani, a Web Developer.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <p class="brand-name">Prem Miglani</p>
+    <p class="brand-role">Web Developer</p>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm Prem Miglani</h1>
+    <h2>Web Developer</h2>
+    <p>I am a passionate web developer with a strong interest in building clean, responsive and user-friendly websites. I love turning ideas into real world applications.</p>
+    <button type="button" class="btn-download">Download CV</button>
+  </div>
+  <div class="hero-img">
+    <img src="photo.jpeg" alt="Prem Miglani">
+  </div>
+</section>
+
+<section class="info-section">
+  <div class="info-box" id="about">
+    <h2><i class="fa-solid fa-user"></i> About Me</h2>
+    <p>I am a quick learner and a team player. I enjoy solving problems and learning new technologies. My goal is to become a full stack developer and work on impactful projects.</p>
+  </div>
+
+  <div class="info-box" id="skills">
+    <h2><i class="fa-solid fa-code"></i> Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Bootstrap</li>
+      <li>Git & GitHub</li>
+      <li>Responsive Design</li>
+    </ul>
+  </div>
+
+  <div class="info-box education-box" id="education">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+    <table>
+      <tr>
+        <th>Qualification</th>
+        <th>Institute</th>
+        <th>Year</th>
+        <th>Percentage</th>
+      </tr>
+      <tr>
+        <td>B.Tech (CSE)</td>
+        <td>ABC Engineering College</td>
+        <td>2022</td>
+        <td>8.6 CGPA</td>
+      </tr>
+      <tr>
+        <td>12th (PCM)</td>
+        <td>XYZ Public School</td>
+        <td>2018</td>
+        <td>85%</td>
+      </tr>
+      <tr>
+        <td>10th</td>
+        <td>XYZ Public School</td>
+        <td>2016</td>
+        <td>90%</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="bottom-section">
+  <div class="projects-box" id="projects">
+    <h2><i class="fa-solid fa-briefcase"></i> Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h3>1. Portfolio Website</h3>
+        <p>A personal portfolio website built using HTML and Bootstrap.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="card">
+        <h3>2. To-Do List App</h3>
+        <p>A simple to-do list web app to add, remove and manage tasks.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="card">
+        <h3>3. Weather App</h3>
+        <p>A weather application that shows real-time weather using API.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+
+    <h2 class="connect-heading"><i class="fa-solid fa-link"></i> Connect with me</h2>
+    <div class="social-icons">
+      <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="contact-box" id="contact">
+    <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Type your message..."></textarea>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn-send">Send Message</button>
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Prem Miglani. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
