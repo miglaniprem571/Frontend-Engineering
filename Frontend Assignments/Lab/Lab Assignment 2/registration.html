@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+form {
+  width: 350px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.section-label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.option input[type="radio"],
+.option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.option label {
+  display: inline;
+  margin: 0;
+  font-weight: normal;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+  padding: 8px 20px;
+  margin: 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Registration Form</h2>
+
+<form action="#" method="post">
+
+  <label for="fname">Full Name:</label>
+  <input type="text" id="fname" name="fname" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="pass">Password:</label>
+  <input type="password" id="pass" name="pass" required>
+
+  <div class="section-label">Gender:</div>
+
+  <div class="option">
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+  </div>
+
+  <div class="option">
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+  </div>
+
+  <div class="section-label">Hobbies:</div>
+
+  <div class="option">
+    <input type="checkbox" id="reading" name="hobbies" value="reading">
+    <label for="reading">Reading</label>
+  </div>
+
+  <div class="option">
+    <input type="checkbox" id="sports" name="hobbies" value="sports">
+    <label for="sports">Sports</label>
+  </div>
+
+  <div class="option">
+    <input type="checkbox" id="music" name="hobbies" value="music">
+    <label for="music">Music</label>
+  </div>
+
+  <label for="course">Course:</label>
+
+  <select id="course" name="course">
+    <option value="bca">BCA</option>
+    <option value="bba">BBA</option>
+    <option value="btech">B.Tech</option>
+    <option value="bcom">B.Com</option>
+  </select>
+
+  <div class="buttons">
+    <input type="submit" value="Register">
+    <input type="reset" value="Clear">
+  </div>
+
+</form>
+
+</body>
+</html>
