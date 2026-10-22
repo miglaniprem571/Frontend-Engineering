@@ -42,51 +42,38 @@
 
   <script>
     function validateForm() {
-      // Get the values
       var name = document.getElementById("name").value;
       var email = document.getElementById("email").value;
       var password = document.getElementById("password").value;
       var confirm = document.getElementById("confirm").value;
 
-      // Clear old messages
       document.getElementById("nameError").innerText = "";
       document.getElementById("emailError").innerText = "";
       document.getElementById("passwordError").innerText = "";
       document.getElementById("confirmError").innerText = "";
       document.getElementById("success").innerText = "";
 
-      var isValid = true;  // stays true only if every check passes
+      var isValid = true;
 
-      // Name: should not be empty
       if (name.trim() === "") {
         document.getElementById("nameError").innerText = "Name is required.";
         isValid = false;
       }
-
-      // Email: must contain @ and a dot
       if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
         document.getElementById("emailError").innerText = "Enter a valid email.";
         isValid = false;
       }
-
-      // Password: at least 6 characters
       if (password.length < 6) {
         document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
         isValid = false;
       }
-
-      // Confirm password: must match password
       if (confirm !== password || confirm === "") {
         document.getElementById("confirmError").innerText = "Passwords do not match.";
         isValid = false;
       }
-
-      // If everything is correct, show success message
       if (isValid) {
         document.getElementById("success").innerText = "Signup successful!";
       }
-
-      // Return false so the page does not reload
       return false;
     }
   </script>

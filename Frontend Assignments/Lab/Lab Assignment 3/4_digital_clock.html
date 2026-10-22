@@ -16,25 +16,22 @@
 
   <script>
     function showTime() {
-      // Get the current date and time
       var now = new Date();
 
       var hours = now.getHours();
       var minutes = now.getMinutes();
       var seconds = now.getSeconds();
 
-      // Add a 0 in front if the number is less than 10 (e.g. 5 becomes 05)
       if (hours < 10) { hours = "0" + hours; }
       if (minutes < 10) { minutes = "0" + minutes; }
       if (seconds < 10) { seconds = "0" + seconds; }
 
-      // Show the time and date on the page
       document.getElementById("clock").innerText = hours + ":" + minutes + ":" + seconds;
       document.getElementById("date").innerText = now.toDateString();
     }
 
-    showTime();                  // show the time immediately
-    setInterval(showTime, 1000); // then update it every 1000 ms (1 second)
+    showTime();                  
+    setInterval(showTime, 1000);
   </script>
 </body>
 </html>

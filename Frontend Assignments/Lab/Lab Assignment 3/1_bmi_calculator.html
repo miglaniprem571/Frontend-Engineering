@@ -29,24 +29,16 @@
 
   <script>
     function calculateBMI() {
-      // 1. Get the values typed by the user
       var height = document.getElementById("height").value;
       var weight = document.getElementById("weight").value;
       var result = document.getElementById("result");
 
-      // 2. Check that both values are entered
       if (height === "" || weight === "" || height <= 0 || weight <= 0) {
         result.innerText = "Please enter valid height and weight.";
         return;
       }
-
-      // 3. Convert height from cm to metres
       var heightInMeters = height / 100;
-
-      // 4. BMI formula = weight / (height * height)
       var bmi = weight / (heightInMeters * heightInMeters);
-
-      // 5. Find the category
       var category = "";
       if (bmi < 18.5) {
         category = "Underweight";
@@ -55,8 +47,6 @@
       } else {
         category = "Overweight";
       }
-
-      // 6. Show the result (toFixed(1) keeps 1 decimal place)
       result.innerText = "Your BMI is " + bmi.toFixed(1) + " (" + category + ")";
     }
   </script>

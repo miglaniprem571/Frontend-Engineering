@@ -33,37 +33,31 @@
       var input = document.getElementById("taskInput");
       var text = input.value;
 
-      // Do nothing if the input is empty
       if (text.trim() === "") {
         alert("Please enter a task.");
         return;
       }
 
-      // Create a new list item
       var li = document.createElement("li");
 
-      // Create the task text (click it to mark as completed)
       var span = document.createElement("span");
       span.innerText = text;
       span.className = "task";
       span.onclick = function () {
-        span.classList.toggle("completed");  // add/remove the line-through style
+        span.classList.toggle("completed");
       };
 
-      // Create the delete button
       var deleteBtn = document.createElement("button");
       deleteBtn.innerText = "Delete";
       deleteBtn.className = "deleteBtn";
       deleteBtn.onclick = function () {
-        li.remove();  // remove this task from the list
+        li.remove();
       };
 
-      // Put the text and button inside the list item, then add it to the list
       li.appendChild(span);
       li.appendChild(deleteBtn);
       document.getElementById("taskList").appendChild(li);
 
-      // Clear the input box
       input.value = "";
     }
   </script>
