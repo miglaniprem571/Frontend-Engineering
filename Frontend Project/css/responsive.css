@@ -1,0 +1,111 @@
+/* ==========================================================================
+   CAMPUS SKILL HUB — RESPONSIVE LAYOUT & MEDIA QUERIES (CSS3)
+   ========================================================================== */
+
+/* Laptop & Large Tablets (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(3, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    
+    .hero-container {
+        gap: 32px;
+    }
+}
+
+/* Tablets (Max-width: 768px) */
+@media (max-width: 768px) {
+    .section {
+        padding: 56px 0;
+    }
+
+    .grid-4, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Header & Mobile Nav */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-card);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        box-shadow: var(--shadow-lg);
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-actions {
+        gap: 12px;
+    }
+
+    /* Hero Responsive */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer-links-group {
+        gap: 32px;
+    }
+}
+
+/* Small Mobile Devices (Max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        width: 94%;
+        padding: 0 12px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .user-menu-name {
+        display: none;
+    }
+}

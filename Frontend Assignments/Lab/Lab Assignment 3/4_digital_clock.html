@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Clock</title>
+  <style>
+    body { background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: Arial, sans-serif; }
+    #clock { color: #00ff99; font-size: 70px; font-family: "Courier New", monospace; }
+    #date { color: white; font-size: 20px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+  <div id="date"></div>
+
+  <script>
+    function showTime() {
+      // Get the current date and time
+      var now = new Date();
+
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Add a 0 in front if the number is less than 10 (e.g. 5 becomes 05)
+      if (hours < 10) { hours = "0" + hours; }
+      if (minutes < 10) { minutes = "0" + minutes; }
+      if (seconds < 10) { seconds = "0" + seconds; }
+
+      // Show the time and date on the page
+      document.getElementById("clock").innerText = hours + ":" + minutes + ":" + seconds;
+      document.getElementById("date").innerText = now.toDateString();
+    }
+
+    showTime();                  // show the time immediately
+    setInterval(showTime, 1000); // then update it every 1000 ms (1 second)
+  </script>
+</body>
+</html>

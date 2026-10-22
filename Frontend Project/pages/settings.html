@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore Skills</a></li>
+                    <li><a href="requests.html" class="nav-link">My Requests</a></li>
+                    <li><a href="settings.html" class="nav-link active">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </header>
+
+    <main class="section flex-center">
+        <div class="container" style="max-width: 680px;">
+            <div class="card" style="padding: 36px;">
+
+                <div style="margin-bottom: 28px;">
+                    <h1 style="font-size: 1.6rem; margin-bottom: 6px;">Account Settings ⚙️</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Manage your application preferences, notifications, theme, and account actions.</p>
+                </div>
+
+                <!-- Dark Mode Settings -->
+                <div class="flex-between" style="padding: 20px; background: var(--bg-page); border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-color);">
+                    <div>
+                        <strong style="font-size: 1rem; display: block; margin-bottom: 4px;">Dark Mode Theme</strong>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Switch between clean light mode and dark theme.</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="darkModeBtn" onclick="toggleDarkMode()">Toggle Theme 🌙</button>
+                </div>
+
+                <!-- Notifications Settings -->
+                <div style="padding: 20px; background: var(--bg-page); border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1rem; margin-bottom: 12px;">Notification Preferences</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label class="checkbox-group">
+                            <input type="checkbox" checked onchange="showToast('Notification preferences updated!', 'info')">
+                            Email alerts when a peer accepts a request
+                        </label>
+                        <label class="checkbox-group">
+                            <input type="checkbox" checked onchange="showToast('Session reminders updated!', 'info')">
+                            Session reminder notifications 24h before meeting
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Account Actions -->
+                <div style="padding: 20px; background: var(--bg-page); border-radius: var(--radius-md); margin-bottom: 24px; border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1rem; margin-bottom: 12px;">Account Security</h3>
+                    <button class="btn btn-outline btn-sm" onclick="showToast('Password change link sent to college email', 'success')">Change Password 🔒</button>
+                </div>
+
+                <!-- Logout -->
+                <div class="flex-between">
+                    <button class="btn btn-danger btn-full" onclick="handleLogout()">Log Out of Account 🚪</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function handleLogout() {
+            showToast('Logging out... See you soon!', 'info');
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Skill Hub | Peer-to-Peer Learning Platform</title>
+    <meta name="description" content="Campus Skill Hub is a student skill-sharing platform where college students find peers to learn new skills and showcase their expertise.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. NAVBAR SECTION
+         ========================================== -->
+    <header class="header">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="pages/explore.html" class="nav-link">Explore Skills</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="pages/dashboard.html" class="nav-link">Dashboard</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navbar Action Button -->
+            <div class="nav-actions">
+                <a href="pages/login.html" class="btn btn-outline btn-sm">Log In</a>
+                <a href="pages/signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==========================================
+             2. HERO SECTION
+             ========================================== -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <!-- Hero Left Content -->
+                <div class="hero-content">
+                    <span class="badge">🚀 Campus Peer Learning Platform</span>
+                    <h1 class="hero-title">Learn from your peers.<br>Share what you know.</h1>
+                    <p class="hero-description">
+                        Discover students who can teach you what you want to learn, share your own skills, and build meaningful learning connections on campus.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="pages/explore.html" class="btn btn-primary">Explore Skills 🔍</a>
+                        <a href="pages/signup.html" class="btn btn-outline">Join Campus Skill Hub ✨</a>
+                    </div>
+                </div>
+
+                <!-- Hero Right CSS Illustration -->
+                <div class="hero-visual">
+                    <div class="illustration-card">
+                        <div class="card-header-visual">
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+                            <span class="card-title-tag">Skill Match Live</span>
+                        </div>
+                        
+                        <div class="exchange-preview">
+                            <div class="peer-box seeker">
+                                <div class="peer-avatar-sm">AS</div>
+                                <div class="peer-info">
+                                    <strong>Arjun</strong>
+                                    <span>Wants: UI/UX</span>
+                                </div>
+                            </div>
+                            
+                            <div class="exchange-icon">⚡</div>
+                            
+                            <div class="peer-box provider">
+                                <div class="peer-avatar-sm purple">PR</div>
+                                <div class="peer-info">
+                                    <strong>Priya</strong>
+                                    <span>Teaches: Figma</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating CSS Badges -->
+                        <div class="floating-badge badge-1">
+                            <span class="icon">✨</span> 4.9/5 Student Rating
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <span class="icon">🤝</span> 100+ Active Peer Matches
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             3. POPULAR SKILLS SECTION
+             ========================================== -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Popular Skills</h2>
+                    <p class="section-subtitle">Find something you want to learn today from experienced campus seniors.</p>
+                </div>
+
+                <div class="grid grid-4">
+                    <!-- Skill 1: Web Development -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">💻</span>
+                        </div>
+                        <h3 class="skill-title">Web Development</h3>
+                        <p class="skill-description">Build modern, responsive websites using HTML, CSS, JavaScript, and React.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 2: Programming -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">🚀</span>
+                        </div>
+                        <h3 class="skill-title">Programming</h3>
+                        <p class="skill-description">Master C++, Java, Python algorithms, and problem-solving techniques for interviews.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 3: UI/UX Design -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">🎨</span>
+                        </div>
+                        <h3 class="skill-title">UI/UX Design</h3>
+                        <p class="skill-description">Learn Figma, wireframing, color theory, and user experience design fundamentals.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 4: Video Editing -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">🎬</span>
+                        </div>
+                        <h3 class="skill-title">Video Editing</h3>
+                        <p class="skill-description">Create engaging videos, reels, and YouTube content with Premiere Pro and DaVinci.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 5: Photography -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">📷</span>
+                        </div>
+                        <h3 class="skill-title">Photography</h3>
+                        <p class="skill-description">Learn camera settings, portrait lighting, framing, and Adobe Lightroom editing.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 6: Public Speaking -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">💬</span>
+                        </div>
+                        <h3 class="skill-title">Public Speaking</h3>
+                        <p class="skill-description">Improve confidence, presentation skills, body language, and interview techniques.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 7: Music -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">🎵</span>
+                        </div>
+                        <h3 class="skill-title">Music</h3>
+                        <p class="skill-description">Learn guitar chords, keyboard music theory, vocal skills, or music production.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+
+                    <!-- Skill 8: Marketing -->
+                    <article class="card skill-card">
+                        <div class="skill-icon-wrapper">
+                            <span class="skill-icon">📊</span>
+                        </div>
+                        <h3 class="skill-title">Marketing</h3>
+                        <p class="skill-description">Understand startup pitch decks, digital marketing, SEO, and social media campaigns.</p>
+                        <div style="margin-top: 16px;">
+                            <a href="pages/explore.html" class="btn btn-outline btn-sm btn-full">Explore Skill</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             4. FEATURED STUDENTS SECTION
+             ========================================== -->
+        <section id="students" class="section students-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Students You May Learn From</h2>
+                    <p class="section-subtitle">Connect with skilled peers ready to share their expertise across campus.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Student 1: Arjun Sharma -->
+                    <article class="card student-card" style="text-align: center;">
+                        <div class="avatar avatar-indigo" style="margin: 0 auto 16px auto;">AS</div>
+                        <h3 class="student-name">Arjun Sharma</h3>
+                        <p class="student-role">Frontend Developer • B.Tech CSE</p>
+                        <div style="margin: 8px 0; color: #F59E0B; font-weight: 600;">⭐ 4.9 (12 reviews)</div>
+                        <div class="tag-group" style="justify-content: center;">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="pages/student-profile.html?id=u2" class="btn btn-secondary-btn">View Profile</a>
+                    </article>
+
+                    <!-- Student 2: Priya Raj -->
+                    <article class="card student-card" style="text-align: center;">
+                        <div class="avatar avatar-purple" style="margin: 0 auto 16px auto;">PR</div>
+                        <h3 class="student-name">Priya Raj</h3>
+                        <p class="student-role">UI/UX Designer • B.Des</p>
+                        <div style="margin: 8px 0; color: #F59E0B; font-weight: 600;">⭐ 4.8 (9 reviews)</div>
+                        <div class="tag-group" style="justify-content: center;">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                        <a href="pages/student-profile.html?id=u3" class="btn btn-secondary-btn">View Profile</a>
+                    </article>
+
+                    <!-- Student 3: Rohan Kumar -->
+                    <article class="card student-card" style="text-align: center;">
+                        <div class="avatar avatar-blue" style="margin: 0 auto 16px auto;">RK</div>
+                        <h3 class="student-name">Rohan Kumar</h3>
+                        <p class="student-role">Python Developer • B.Tech AI/DS</p>
+                        <div style="margin: 8px 0; color: #F59E0B; font-weight: 600;">⭐ 4.9 (15 reviews)</div>
+                        <div class="tag-group" style="justify-content: center;">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                        <a href="pages/student-profile.html?id=u4" class="btn btn-secondary-btn">View Profile</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             5. HOW IT WORKS SECTION
+             ========================================== -->
+        <section id="how-it-works" class="section steps-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">Three simple steps to start learning and sharing skills on campus.</p>
+                </div>
+
+                <div class="steps-container">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title">Find a Skill</h3>
+                        <p class="step-description">
+                            Browse categories or search for specific skills you want to master this semester.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title">Find a Student</h3>
+                        <p class="step-description">
+                            Check student profiles, reviews, and skills offered by peers in your college.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title">Connect & Learn</h3>
+                        <p class="step-description">
+                            Send a session request, coordinate a time, and start peer learning right on campus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             6. WHY CAMPUS SKILL HUB
+             ========================================== -->
+        <section class="section about-section">
+            <div class="container about-container">
+                <div class="about-card">
+                    <h2>Why Campus Skill Hub?</h2>
+                    <p>
+                        Campus Skill Hub empowers students to teach what they love and learn what they need. No expensive courses or formal classroom pressures — just student-driven, collaborative peer learning that builds real skills and real campus networks.
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="pages/signup.html" class="btn btn-primary">Get Started Today ✨</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ==========================================
+         7. FOOTER SECTION
+         ========================================== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <!-- Left Branding Column -->
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">Campus Skill Hub</span>
+                </a>
+                <p class="footer-tagline">
+                    Empowering peer-to-peer learning and skill sharing across campus.
+                </p>
+            </div>
+
+            <!-- Right Links Column -->
+            <div class="footer-links-group">
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/explore.html">Explore Skills</a></li>
+                        <li><a href="pages/dashboard.html">Dashboard</a></li>
+                        <li><a href="pages/bookmarks.html">Bookmarks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Account</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/login.html">Login</a></li>
+                        <li><a href="pages/signup.html">Signup</a></li>
+                        <li><a href="pages/settings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global App Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

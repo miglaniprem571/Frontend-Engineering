@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Skills & Peers | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="explore.html" class="nav-link active">Explore Skills</a></li>
+                    <li><a href="requests.html" class="nav-link">My Requests</a></li>
+                    <li><a href="my-profile.html" class="nav-link">My Profile</a></li>
+                    <li><a href="settings.html" class="nav-link">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+
+            <div class="section-header" style="margin-bottom: 32px;">
+                <h1 class="section-title">Explore Skills & Peer Mentors</h1>
+                <p class="section-subtitle">Search skills you want to learn and connect with student mentors across campus.</p>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="card" style="margin-bottom: 40px; padding: 24px;">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="skillSearch" class="search-input" placeholder="What do you want to learn? (e.g. React, Python, Figma, Public Speaking)">
+                </div>
+
+                <div class="category-pills">
+                    <button class="pill active" data-category="all">All Categories</button>
+                    <button class="pill" data-category="Development">💻 Development</button>
+                    <button class="pill" data-category="Design">🎨 Design</button>
+                    <button class="pill" data-category="Media">🎬 Media</button>
+                    <button class="pill" data-category="Business">📊 Business</button>
+                    <button class="pill" data-category="Music">🎵 Music</button>
+                    <button class="pill" data-category="Communication">💬 Communication</button>
+                </div>
+            </div>
+
+            <!-- Skills Grid Section -->
+            <div style="margin-bottom: 56px;">
+                <h2 style="margin-bottom: 20px; font-size: 1.5rem;">Popular Skill Categories</h2>
+                <div class="grid grid-3" id="exploreSkillsGrid">
+                    <!-- Rendered dynamically via js/skills.js -->
+                </div>
+            </div>
+
+            <!-- Featured Student Mentors Section -->
+            <div>
+                <h2 style="margin-bottom: 20px; font-size: 1.5rem;">Featured Campus Mentors</h2>
+                <div class="grid grid-3" id="exploreStudentsGrid">
+                    <!-- Rendered dynamically via js/skills.js -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/skills.js"></script>
+</body>
+</html>

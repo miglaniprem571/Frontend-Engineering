@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signup Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; display: flex; justify-content: center; padding-top: 40px; }
+    .box { background: white; padding: 25px; border-radius: 8px; width: 320px; box-shadow: 0 2px 8px #ccc; }
+    input, button { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    button { background: #2d6cdf; color: white; border: none; cursor: pointer; margin-top: 15px; }
+    .error { color: red; font-size: 13px; height: 16px; margin-bottom: 8px; }
+    #success { color: green; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Sign Up</h2>
+
+    <form onsubmit="return validateForm()">
+      <label>Name</label>
+      <input type="text" id="name">
+      <div class="error" id="nameError"></div>
+
+      <label>Email</label>
+      <input type="text" id="email">
+      <div class="error" id="emailError"></div>
+
+      <label>Password</label>
+      <input type="password" id="password">
+      <div class="error" id="passwordError"></div>
+
+      <label>Confirm Password</label>
+      <input type="password" id="confirm">
+      <div class="error" id="confirmError"></div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="success"></p>
+  </div>
+
+  <script>
+    function validateForm() {
+      // Get the values
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirm = document.getElementById("confirm").value;
+
+      // Clear old messages
+      document.getElementById("nameError").innerText = "";
+      document.getElementById("emailError").innerText = "";
+      document.getElementById("passwordError").innerText = "";
+      document.getElementById("confirmError").innerText = "";
+      document.getElementById("success").innerText = "";
+
+      var isValid = true;  // stays true only if every check passes
+
+      // Name: should not be empty
+      if (name.trim() === "") {
+        document.getElementById("nameError").innerText = "Name is required.";
+        isValid = false;
+      }
+
+      // Email: must contain @ and a dot
+      if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+        document.getElementById("emailError").innerText = "Enter a valid email.";
+        isValid = false;
+      }
+
+      // Password: at least 6 characters
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      // Confirm password: must match password
+      if (confirm !== password || confirm === "") {
+        document.getElementById("confirmError").innerText = "Passwords do not match.";
+        isValid = false;
+      }
+
+      // If everything is correct, show success message
+      if (isValid) {
+        document.getElementById("success").innerText = "Signup successful!";
+      }
+
+      // Return false so the page does not reload
+      return false;
+    }
+  </script>
+</body>
+</html>

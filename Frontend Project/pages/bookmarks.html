@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Bookmarks | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore Skills</a></li>
+                    <li><a href="requests.html" class="nav-link">My Requests</a></li>
+                    <li><a href="bookmarks.html" class="nav-link active">Bookmarks</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+
+            <div class="section-header" style="margin-bottom: 32px;">
+                <h1 class="section-title">Saved Student Bookmarks 📌</h1>
+                <p class="section-subtitle">Quickly access peer mentors you have bookmarked for future skill exchange sessions.</p>
+            </div>
+
+            <div class="grid grid-3" id="bookmarksGrid">
+                <!-- Rendered dynamically via js/profile.js -->
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

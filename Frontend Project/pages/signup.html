@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section flex-center" style="min-height: 85vh;">
+        <div class="container" style="max-width: 600px;">
+            <div class="card" style="padding: 40px;">
+                <div style="margin-bottom: 24px; text-align: center;">
+                    <h1 style="font-size: 1.75rem; margin-bottom: 8px;">Create Student Account 🎓</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Join your campus peer learning & skill sharing network.</p>
+                </div>
+
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label class="form-label" for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-input" placeholder="e.g. Prem Miglani" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">College Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="prem@college.edu" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-input" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="course">Course / Branch</label>
+                            <select id="course" class="form-select">
+                                <option value="B.Tech CSE">B.Tech CSE</option>
+                                <option value="B.Tech AI/DS">B.Tech AI & DS</option>
+                                <option value="B.Des">B.Des (Design)</option>
+                                <option value="BBA">BBA</option>
+                                <option value="B.A. Journalism">B.A. Journalism</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="year">Academic Year</label>
+                            <select id="year" class="form-select">
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year" selected>3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 24px;">
+                        <label class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            I agree to the campus peer community guidelines & terms.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Create Account ✨</button>
+                </form>
+
+                <div style="margin-top: 24px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+                    Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Log in</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

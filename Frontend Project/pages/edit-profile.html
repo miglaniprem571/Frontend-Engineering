@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore Skills</a></li>
+                    <li><a href="my-profile.html" class="nav-link">My Profile</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </header>
+
+    <main class="section flex-center">
+        <div class="container" style="max-width: 640px;">
+            <div class="card" style="padding: 36px;">
+                <div style="margin-bottom: 24px;">
+                    <h1 style="font-size: 1.6rem; margin-bottom: 6px;">Edit Profile Information ✏️</h1>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Update your student bio, degree, and campus details.</p>
+                </div>
+
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label class="form-label" for="editName">Full Name</label>
+                        <input type="text" id="editName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="editBio">Bio / About You</label>
+                        <textarea id="editBio" class="form-textarea" placeholder="Share your academic interests, skills, or what you enjoy learning..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="editCourse">Course / Degree</label>
+                            <select id="editCourse" class="form-select">
+                                <option value="B.Tech CSE">B.Tech CSE</option>
+                                <option value="B.Tech AI/DS">B.Tech AI & DS</option>
+                                <option value="B.Des">B.Des (Design)</option>
+                                <option value="BBA">BBA</option>
+                                <option value="B.A. Journalism">B.A. Journalism</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="editYear">Academic Year</label>
+                            <select id="editYear" class="form-select">
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex-between" style="margin-top: 16px;">
+                        <a href="my-profile.html" class="btn btn-outline">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Save Changes ✨</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

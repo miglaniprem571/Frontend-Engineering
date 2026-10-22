@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Campus Skill Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">Campus Skill Hub</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+            <nav class="nav-menu">
+                <ul class="nav-list" style="display: flex; gap: 24px;">
+                    <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="explore.html" class="nav-link">Explore Skills</a></li>
+                    <li><a href="requests.html" class="nav-link">My Requests</a></li>
+                    <li><a href="my-profile.html" class="nav-link">My Profile</a></li>
+                    <li><a href="settings.html" class="nav-link">Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Injected via app.js -->
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+
+            <!-- Greeting Banner -->
+            <div class="card" style="background: linear-gradient(135deg, var(--primary), #6366F1); color: #FFFFFF; padding: 36px; margin-bottom: 32px;">
+                <div class="flex-between" style="flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <span class="badge badge-purple" style="background: rgba(255,255,255,0.2); color: #FFFFFF; margin-bottom: 12px;">Student Dashboard</span>
+                        <h1 id="userGreeting" style="font-size: 2rem; color: #FFFFFF; margin-bottom: 8px;">Good morning, Prem 👋</h1>
+                        <p style="color: #EEF2FF; font-size: 1rem;">Ready to learn something new or connect with a peer mentor today?</p>
+                    </div>
+                    <div>
+                        <a href="explore.html" class="btn" style="background: #FFFFFF; color: var(--primary);">Explore Skills Now 🔍</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats Grid -->
+            <div class="grid grid-4" style="margin-bottom: 40px;">
+                <div class="card flex-between">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Skills Learning</span>
+                        <h2 style="font-size: 1.8rem; margin-top: 4px;" id="statLearningCount">2</h2>
+                    </div>
+                    <span style="font-size: 2rem;">🚀</span>
+                </div>
+
+                <div class="card flex-between">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Skills Teaching</span>
+                        <h2 style="font-size: 1.8rem; margin-top: 4px;" id="statTeachCount">2</h2>
+                    </div>
+                    <span style="font-size: 2rem;">💻</span>
+                </div>
+
+                <div class="card flex-between">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Pending Requests</span>
+                        <h2 style="font-size: 1.8rem; color: var(--warning); margin-top: 4px;" id="statPendingCount">1</h2>
+                    </div>
+                    <span style="font-size: 2rem;">⏳</span>
+                </div>
+
+                <div class="card flex-between">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);">Upcoming Sessions</span>
+                        <h2 style="font-size: 1.8rem; color: var(--success); margin-top: 4px;" id="statUpcomingCount">1</h2>
+                    </div>
+                    <span style="font-size: 2rem;">📅</span>
+                </div>
+            </div>
+
+            <!-- Quick Actions Bar -->
+            <div class="card" style="margin-bottom: 40px; padding: 20px;">
+                <h3 style="margin-bottom: 16px; font-size: 1.1rem;">Quick Actions</h3>
+                <div class="grid grid-4">
+                    <a href="explore.html" class="btn btn-outline">🔍 Explore Skills</a>
+                    <a href="my-profile.html" class="btn btn-outline">➕ Add a Skill</a>
+                    <a href="requests.html" class="btn btn-outline">📂 View Requests</a>
+                    <a href="edit-profile.html" class="btn btn-outline">✏️ Edit Profile</a>
+                </div>
+            </div>
+
+            <!-- Recommended for You Section -->
+            <div style="margin-bottom: 32px;">
+                <div class="flex-between" style="margin-bottom: 20px;">
+                    <h2>Recommended Peer Mentors</h2>
+                    <a href="explore.html" style="color: var(--primary); font-weight: 600;">View All →</a>
+                </div>
+
+                <div class="grid grid-3" id="dashboardRecommendedGrid">
+                    <!-- Dynamic rendering via inline dashboard script -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Campus Skill Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = getCurrentUser();
+            const requests = getRequests();
+
+            // Populate Greeting
+            const greetingEl = document.getElementById('userGreeting');
+            if (greetingEl && user) {
+                greetingEl.textContent = `Good morning, ${user.name.split(' ')[0]} 👋`;
+            }
+
+            // Stats
+            if (user) {
+                document.getElementById('statLearningCount').textContent = user.skillsLearn.length;
+                document.getElementById('statTeachCount').textContent = user.skillsTeach.length;
+            }
+
+            const pending = requests.filter(r => r.status === 'pending').length;
+            const upcoming = requests.filter(r => r.status === 'accepted').length;
+
+            document.getElementById('statPendingCount').textContent = pending;
+            document.getElementById('statUpcomingCount').textContent = upcoming;
+
+            // Render Recommended Students
+            const students = getStudents();
+            const recommendedGrid = document.getElementById('dashboardRecommendedGrid');
+            if (recommendedGrid) {
+                recommendedGrid.innerHTML = students.slice(0, 3).map(student => `
+                    <article class="card student-card" style="text-align: center;">
+                        <div class="avatar" style="background: ${student.avatarBg}; margin: 0 auto 16px auto;">${student.avatar}</div>
+                        <h3 class="student-name">${student.name}</h3>
+                        <p class="student-role">${student.role} • ${student.course}</p>
+                        <div style="margin: 8px 0; color: #F59E0B; font-weight: 600;">⭐ ${student.rating}</div>
+                        <div class="tag-group" style="justify-content: center;">
+                            ${student.skillsTeach.map(s => `<span class="tag">${s}</span>`).join('')}
+                        </div>
+                        <a href="student-profile.html?id=${student.id}" class="btn btn-secondary-btn">View Profile</a>
+                    </article>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+</html>

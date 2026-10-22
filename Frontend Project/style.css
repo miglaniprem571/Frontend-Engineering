@@ -1,0 +1,781 @@
+/* ==========================================================================
+   CAMPUS SKILL HUB — STYLESHEET (CSS3)
+   Academic Project: Frontend Engineering
+   Author: Prem Miglani
+   Year: 2026
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES & COLOR PALETTE
+   -------------------------------------------------------------------------- */
+:root {
+    /* Color Tokens specified in SRS & Prompt */
+    --primary: #4F46E5;         /* Primary Indigo */
+    --primary-hover: #4338CA;   /* Darker Indigo for Hover */
+    --secondary: #7C3AED;       /* Secondary Purple */
+    --secondary-hover: #6D28D9; /* Darker Purple for Hover */
+    --light-accent: #EEF2FF;    /* Light Indigo Accent */
+    --text-main: #0F172A;       /* Slate 900 */
+    --text-muted: #64748B;      /* Slate 500 */
+    --bg-page: #FAFAFC;         /* Crisp Light Background */
+    --bg-card: #FFFFFF;         /* White Card Background */
+    --border-color: #E2E8F0;    /* Subtle Border */
+    --border-hover: #CBD5E1;    /* Darker Border on Hover */
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* Elevation & Shadows */
+    --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+    --shadow-hover: 0 12px 24px -4px rgba(79, 70, 229, 0.12), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+
+    /* Transitions */
+    --transition: all 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-main);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT & CONTAINERS
+   -------------------------------------------------------------------------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* Grid Layout Utility */
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+/* Card Base Component */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-hover);
+}
+
+/* Badge Component */
+.badge {
+    display: inline-block;
+    background-color: var(--light-accent);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    margin-bottom: 16px;
+}
+
+/* Button Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.975rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--light-accent);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-login {
+    background-color: var(--light-accent);
+    color: var(--primary);
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+.btn-login:hover {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-secondary-btn {
+    width: 100%;
+    margin-top: 16px;
+    background-color: var(--light-accent);
+    color: var(--primary);
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+}
+
+.btn-secondary-btn:hover {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+
+/* --------------------------------------------------------------------------
+   4. NAVBAR SECTION
+   -------------------------------------------------------------------------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+    padding: 80px 0 100px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 580px;
+}
+
+.hero-title {
+    font-size: 2.85rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    margin-bottom: 32px;
+    color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Hero CSS Illustration */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.illustration-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.15);
+}
+
+.card-header-visual {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.dot.red { background-color: #EF4444; }
+.dot.yellow { background-color: #F59E0B; }
+.dot.green { background-color: #10B981; }
+
+.card-title-tag {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    background-color: var(--light-accent);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.exchange-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--bg-page);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--border-color);
+}
+
+.peer-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.peer-avatar-sm {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #6366F1);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.peer-avatar-sm.purple {
+    background: linear-gradient(135deg, var(--secondary), #EC4899);
+}
+
+.peer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.peer-info strong {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.peer-info span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.exchange-icon {
+    font-size: 1.25rem;
+    color: var(--primary);
+    background: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-subtle);
+}
+
+.floating-badge {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-1 {
+    top: -15px;
+    right: -20px;
+    color: var(--text-main);
+}
+
+.badge-2 {
+    bottom: -15px;
+    left: -20px;
+    color: var(--primary);
+}
+
+
+/* --------------------------------------------------------------------------
+   6. POPULAR SKILLS SECTION
+   -------------------------------------------------------------------------- */
+.skills-section {
+    background-color: var(--bg-page);
+}
+
+.skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background-color: var(--light-accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.skill-icon {
+    font-size: 1.6rem;
+}
+
+.skill-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.skill-description {
+    font-size: 0.925rem;
+    line-height: 1.5;
+}
+
+
+/* --------------------------------------------------------------------------
+   7. FEATURED STUDENTS SECTION
+   -------------------------------------------------------------------------- */
+.students-section {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.students-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.student-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CSS Avatar with Initials */
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+}
+
+.avatar-indigo {
+    background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+}
+
+.avatar-purple {
+    background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+}
+
+.avatar-blue {
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+}
+
+.student-name {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.student-role {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tag {
+    background-color: var(--light-accent);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+
+/* --------------------------------------------------------------------------
+   8. HOW IT WORKS SECTION
+   -------------------------------------------------------------------------- */
+.steps-section {
+    background-color: var(--bg-page);
+}
+
+.steps-container {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.step-card {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.step-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+    background-color: var(--light-accent);
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.step-description {
+    font-size: 0.925rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   9. ABOUT SECTION
+   -------------------------------------------------------------------------- */
+.about-section {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--border-color);
+}
+
+.about-container {
+    max-width: 800px;
+}
+
+.about-card {
+    text-align: center;
+    background: var(--light-accent);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+.about-card h2 {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.about-card p {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.7;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. FOOTER SECTION
+   -------------------------------------------------------------------------- */
+.footer {
+    background-color: #0F172A; /* Dark navy footer background */
+    color: #94A3B8;
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #1E293B;
+}
+
+.footer-logo {
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.footer-tagline {
+    max-width: 320px;
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+.footer-heading {
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #94A3B8;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748B;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE DESIGN (MEDIA QUERIES)
+   -------------------------------------------------------------------------- */
+
+/* Tablet (Max-width: 992px) */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (Max-width: 768px) */
+@media (max-width: 768px) {
+    .section {
+        padding: 50px 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-list {
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .badge-1, .badge-2 {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: 12px;
+    }
+
+    .illustration-card {
+        padding: 16px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Vertical step layout on mobile */
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+}

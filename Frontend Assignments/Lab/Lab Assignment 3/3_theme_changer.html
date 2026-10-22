@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Theme Changer</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: white; color: black; }
+    button { padding: 10px 18px; margin: 5px; border: none; border-radius: 5px; cursor: pointer; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Change the Color Theme</h1>
+  <p>Click a button to change the page colors.</p>
+
+  <button onclick="setTheme('white', 'black')">Light</button>
+  <button onclick="setTheme('#222', 'white')">Dark</button>
+  <button onclick="setTheme('#d6ecff', '#003366')">Blue</button>
+  <button onclick="setTheme('#d8f5d8', '#14532d')">Green</button>
+  <button onclick="setTheme('#ffe0e6', '#7a0026')">Pink</button>
+
+  <script>
+    // This function changes the background and text color of the page
+    function setTheme(bgColor, textColor) {
+      document.body.style.backgroundColor = bgColor;
+      document.body.style.color = textColor;
+    }
+  </script>
+</body>
+</html>
